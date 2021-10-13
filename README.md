@@ -1,7 +1,10 @@
 # TSP-Taiwan
 
+## Algorithms 
+- MST
+- Branch and Bound
 
-### Distances between Cities
+## Distances between Cities
 | Taipei     | New-Taipei | Keelung | Taoyuan | Hsinchu | Maoli  | Taichung | Changhua | Nantou | Yunlin | Chiayi | Tainan | Kaohsiung | Pingtung | Yilan  | Hualien | Taidung |        |
 |:----------:|:----------:|:-------:|:-------:|:-------:|:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:------:|:-------:|:-------:|:------:|
 | Taipei     | 0          | 10.37   | 20.92   | 27      | 65.32  | 91.67    | 134.54   | 148.64 | 154.14 | 182.26 | 206.51 | 267.16    | 297.47   | 283.82 | 39.67   | 117.53  | 257.27 |
