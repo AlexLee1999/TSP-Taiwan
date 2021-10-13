@@ -1,4 +1,4 @@
-1 Taipei 2 New Taipei 3 keelung 4 taoyuan 5 hsinchu 6 maoli 7 taichung 8 changhua 9 nantou 10 yunlin 11 chiayi 12 tainan 13 kaohsiung 14 pingtung 15 yilan 16 hualien 17 taidong
+1 Taipei 2 New Taipei 3 keelung 4 taoyuan 5 hsinchu 6 maoli 7 taichung 8 changhua 9 nantou 10 yunlin 11 chiayi 12 tainan 13 kaohsiung 14 pingtung 15 yilan 16 hualien 17 taidung
 
 1 2 10.37
 1 3 20.92
