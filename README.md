@@ -5,7 +5,7 @@
 - Branch and Bound
 
 ## Distances between Cities
-| Taipei     | New-Taipei | Keelung | Taoyuan | Hsinchu | Maoli  | Taichung | Changhua | Nantou | Yunlin | Chiayi | Tainan | Kaohsiung | Pingtung | Yilan  | Hualien | Taidung |        |
+| | Taipei     | New-Taipei | Keelung | Taoyuan | Hsinchu | Maoli  | Taichung | Changhua | Nantou | Yunlin | Chiayi | Tainan | Kaohsiung | Pingtung | Yilan  | Hualien | Taidung |
 |:----------:|:----------:|:-------:|:-------:|:-------:|:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:------:|:-------:|:-------:|:------:|
 | Taipei     | 0          | 10.37   | 20.92   | 27      | 65.32  | 91.67    | 134.54   | 148.64 | 154.14 | 182.26 | 206.51 | 267.16    | 297.47   | 283.82 | 39.67   | 117.53  | 257.27 |
 | New-Taipei | 10.37      | 0       | 31.09   | 16.72   | 55.05  | 81.93    | 125.68   | 139.74 | 146.2  | 174.27 | 198.76 | 259.55    | 290.71   | 277.43 | 43.37   | 114.57  | 252.96 |
