@@ -29,5 +29,7 @@
 
 ## Results
 ### Nearest Neighbor
+<img src="NN_Result.png" width="300">
+
 ### Minimum Spanning Tree
 <img src="MST_Result.png" width="300">
