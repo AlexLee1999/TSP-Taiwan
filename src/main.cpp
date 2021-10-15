@@ -8,9 +8,10 @@
 int main(int argc, char *argv[])
 {
     std::fstream fin("./distance.txt");
+    std::string algorithm = argv[1];
     std::fstream fout;
     std::string inFilePath = "./distance.txt";
-    std::string outFilePath = "./result.txt";
+    std::string outFilePath = "./" + algorithm + ".txt";
     fout.open(outFilePath, std::ios::out | std::ios::trunc);
     int VerticesSize;
     fin >> VerticesSize; // get vertices numbers
@@ -23,8 +24,17 @@ int main(int argc, char *argv[])
         fin >> id1 >> id2 >> distance;
         myGraph->AddUndirectedEdge(id1, id2, distance);
     }
-
-    myGraph->PrimAlgorithm();
-    myGraph->PreorderTraversal();
-    myGraph->WriteUndirectedOutputFile(fout);
+    if (algorithm == "MST")
+    {
+        myGraph->PrimAlgorithm();
+        myGraph->PreorderTraversal();
+        myGraph->CalculateDistance();
+        myGraph->WriteMSTOutputFile(fout);
+    }
+    else if (algorithm == "NN")
+    {
+        myGraph->NearestNeighbor();
+        myGraph->CalculateDistance();
+        myGraph->WriteNNOutputFile(fout);
+    }
 }

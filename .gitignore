@@ -2,3 +2,4 @@
 *.o
 Tsp
 .DS_Store
+.vscode/settings.json

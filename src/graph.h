@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_map>
 #include "node.h"
 
 class graph
@@ -14,6 +15,8 @@ private:
     std::string _type;
     float _TotalWeight;
     std::vector<node *> _SequenceList;
+    float _TotalDistance;
+    std::vector<std::vector<float> > _EdgeTable;
 
 public:
     graph(int);
@@ -21,10 +24,11 @@ public:
     // Constructing the Graph
     void AddUndirectedEdge(int, int, float); // node1, node2, distance
 
-    //MST
+    // MST
     void PrimAlgorithm();
     void PreorderTraversal();
     void Traversal(node *);
+    void CalculateDistance();
 
     // For Heap Operations
     void Heapify(int);
@@ -33,8 +37,12 @@ public:
     node *ExtractMin();
     void DecreaseKey(node *);
 
+    // NN
+    void NearestNeighbor();
 
-    // Output 
-    void WriteUndirectedOutputFile(std::ostream&);
+    // Output
+    void PrintSequence(std::ostream&);
+    void WriteMSTOutputFile(std::ostream &);
+    void WriteNNOutputFile(std::ostream &);
 };
 #endif

@@ -4,7 +4,8 @@
 
 graph::graph(int VerticesNumber)
 {
-    _TotalWeight = (float)0;
+    _TotalWeight = 0.0;
+    _TotalDistance = 0.0;
     _VerticesNumber = VerticesNumber;
     _NodeList.resize(VerticesNumber);
     _CopyNodeList.resize(VerticesNumber);
@@ -13,6 +14,7 @@ graph::graph(int VerticesNumber)
         _NodeList[i] = new node(i); // add new node
         _CopyNodeList[i] = _NodeList[i];
     }
+    _EdgeTable = std::vector<std::vector<float> >(VerticesNumber, std::vector<float>(VerticesNumber, 0.0));
 }
 
 void graph::AddUndirectedEdge(int id1, int id2, float distance)
@@ -21,6 +23,8 @@ void graph::AddUndirectedEdge(int id1, int id2, float distance)
     node *Node2 = _NodeList[id2];
     Node1->AddAdjancentNode(Node2, distance);
     Node2->AddAdjancentNode(Node1, distance);
+    _EdgeTable[id1][id2] = distance;
+    _EdgeTable[id2][id1] = distance;
 }
 
 void graph::PrimAlgorithm()
@@ -129,7 +133,7 @@ void graph::DecreaseKey(node *x)
     }
 }
 
-void graph::WriteUndirectedOutputFile(std::ostream &fout)
+void graph::WriteMSTOutputFile(std::ostream &fout)
 {
     fout << "MST With Prim's Algorithm" << std::endl;
     fout << "MST Total Weight : " << _TotalWeight << std::endl;
@@ -153,6 +157,19 @@ void graph::WriteUndirectedOutputFile(std::ostream &fout)
     }
     fout << std::endl;
     fout << std::endl;
+    PrintSequence(fout);
+}
+
+void graph::WriteNNOutputFile(std::ostream &fout)
+{
+    fout << "Nearest Neighbor Algorithm" << std::endl;
+    fout << std::endl;
+    fout << std::endl;
+    PrintSequence(fout);
+}
+
+void graph::PrintSequence(std::ostream &fout)
+{
     fout << "Best Sequence" << std::endl;
     fout << "0";
     for (int i = 0; i < _SequenceList.size(); ++i)
@@ -160,8 +177,8 @@ void graph::WriteUndirectedOutputFile(std::ostream &fout)
         fout << " -> " << _SequenceList[i]->_id;
     }
     fout << std::endl;
+    fout << "Total Distance : " << _TotalDistance << std::endl;
 }
-
 void graph::PreorderTraversal()
 {
     node *Node = _CopyNodeList[0];
@@ -178,4 +195,41 @@ void graph::Traversal(node *Node)
         }
     }
     _SequenceList.push_back(Node);
+}
+
+void graph::CalculateDistance()
+{
+    int PreviousNode = 0;
+    for (int i = 0; i < _VerticesNumber; ++i)
+    {
+        int CurrentNode = _SequenceList[i]->_id;
+        _TotalDistance += _EdgeTable[PreviousNode][CurrentNode];
+        PreviousNode = CurrentNode;
+    }
+}
+
+void graph::NearestNeighbor()
+{
+    node *Node = _NodeList[0];
+    Node->SetVisited();
+
+    for (int i = 0; i < _VerticesNumber - 1; ++i)
+    {
+        float MinDistance = (float)INT32_MAX;
+        node *NearestNode = nullptr;
+
+        for (int j = 0; j < Node->_AdjacentNodeList.size(); ++j)
+        {
+            if (Node->_AdjacentNodeList[j].second.first < MinDistance && !Node->_AdjacentNodeList[j].first->_isVisited)
+            {
+
+                NearestNode = Node->_AdjacentNodeList[j].first;
+                MinDistance = Node->_AdjacentNodeList[j].second.first;
+            }
+        }
+        _SequenceList.push_back(NearestNode);
+        NearestNode->SetVisited();
+        Node = NearestNode;
+    }
+    _SequenceList.push_back(_NodeList[0]);
 }
