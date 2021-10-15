@@ -1,6 +1,7 @@
 # TSP-Taiwan
 
 ## Algorithms 
+- Nearest Neighbour
 - MST
 - Branch and Bound
 
