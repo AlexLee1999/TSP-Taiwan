@@ -1,7 +1,7 @@
 # TSP-Taiwan
 
 ## Algorithms 
-- Nearest Neighbour
+- Nearest Neighbor
 - MST
 - Branch and Bound
 
@@ -28,8 +28,18 @@
 
 
 ## Results
-### Nearest Neighbor
+### Nearest Neighbor Algorithm
+#### Google Map Plot
 <img src="NN_Result.png" width="300">
 
-### Minimum Spanning Tree
-<img src="MST_Result.png" width="300">
+#### Sequence
+Total Distance : 723.84 km  
+Taipei -> New Taipei -> Taoyuan -> Hsinchu -> Maoli -> Taichung -> Changhua -> Nantou -> Yunlin -> Chiayi -> Tainan -> Kaohsiung -> Pingtung -> Taitung -> Hualien -> Yilan -> Keelung -> Taipei
+
+### Minimum Spanning Tree Approximate Algorithm
+#### Google Map Plot
+<img src="MST_Result.png" width="300">  
+
+#### Sequence
+Total Distance : 957.91  km
+Taipei -> Taitung -> Pingtung ->  Kaohsiung -> Tainan -> Chiayi -> Yunlin -> Nantou -> Changhua -> Taichung -> Maoli -> Hsinchu -> Taoyuan -> New Taipei -> Keelung -> Hualien -> Yilan -> Taipei
