@@ -1,11 +1,17 @@
 # TSP-Taiwan
+## Introduction
+In this project, I use three algorithms to approximate the Travelling Salesman Problem (TSP) with data from Taiwan.
 
 ## Algorithms 
-- Nearest Neighbor
-- MST
-- Branch and Bound
+### Nearest Neighbor
+This algorithm always choose the nearest unvisited neighbour as the next destination.  
+
+### Minimum Spanning Tree
+The algorithm first calculate the Minimum Spanning Tree (MST), and sort the sequence of destinations with preorder traversal.
+### Branch and Bound
 
 ## Distances between Cities
+The data between counties are measured with Google Maps, and I use the government building as the exact point to measure the distance between counties.
 | | Taipei     | New-Taipei | Keelung | Taoyuan | Hsinchu | Maoli  | Taichung | Changhua | Nantou | Yunlin | Chiayi | Tainan | Kaohsiung | Pingtung | Yilan  | Hualien | Taidung |
 |:----------:|:----------:|:-------:|:-------:|:-------:|:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:------:|:-------:|:-------:|:------:|
 | Taipei     | 0          | 10.37   | 20.92   | 27      | 65.32  | 91.67    | 134.54   | 148.64 | 154.14 | 182.26 | 206.51 | 267.16    | 297.47   | 283.82 | 39.67   | 117.53  | 257.27 |
@@ -28,7 +34,7 @@
 
 
 ## Results
-### Nearest Neighbor Algorithm
+### Nearest Neighbour Algorithm
 #### Google Map Plot
 <img src="NN_Result.png" width="300">
 
