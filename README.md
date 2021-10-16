@@ -48,4 +48,4 @@ Taipei -> New Taipei -> Taoyuan -> Hsinchu -> Maoli -> Taichung -> Changhua -> N
 
 #### Sequence
 Total Distance : 957.91  km  
-Taipei -> Taitung -> Pingtung ->  Kaohsiung -> Tainan -> Chiayi -> Yunlin -> Nantou -> Changhua -> Taichung -> Maoli -> Hsinchu -> Taoyuan -> New Taipei -> Keelung -> Hualien -> Yilan -> Taipei
+Taipei -> New Taipei -> Taoyuan -> Hsinchu -> Maoli -> Taichung -> Changhua -> Nantou -> Yunlin -> Chiayi -> Tainan -> Kaohsiung -> Pingtung -> Taitung -> Keelung -> Hualien -> Yilan -> Taipei

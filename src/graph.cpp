@@ -171,11 +171,11 @@ void graph::WriteNNOutputFile(std::ostream &fout)
 void graph::PrintSequence(std::ostream &fout)
 {
     fout << "Best Sequence" << std::endl;
-    fout << "0";
-    for (int i = 0; i < _SequenceList.size(); ++i)
+    for (int i = 0; i < _SequenceList.size() - 1; ++i)
     {
-        fout << " -> " << _SequenceList[i]->_id;
+        fout << _SequenceList[i]->_id << " -> ";
     }
+    fout << _SequenceList[_SequenceList.size() - 1]->_id;
     fout << std::endl;
     fout << "Total Distance : " << _TotalDistance << std::endl;
 }
@@ -183,10 +183,12 @@ void graph::PreorderTraversal()
 {
     node *Node = _CopyNodeList[0];
     Traversal(Node);
+    _SequenceList.push_back(Node);
 }
 
 void graph::Traversal(node *Node)
 {
+    _SequenceList.push_back(Node);
     for (int i = 0; i < Node->_AdjacentNodeList.size(); ++i)
     {
         if (Node->_AdjacentNodeList[i].second.second == true && Node->_id < Node->_AdjacentNodeList[i].first->_id)
@@ -194,7 +196,6 @@ void graph::Traversal(node *Node)
             Traversal(Node->_AdjacentNodeList[i].first);
         }
     }
-    _SequenceList.push_back(Node);
 }
 
 void graph::CalculateDistance()
@@ -211,6 +212,7 @@ void graph::CalculateDistance()
 void graph::NearestNeighbor()
 {
     node *Node = _NodeList[0];
+    _SequenceList.push_back(_NodeList[0]);
     Node->SetVisited();
 
     for (int i = 0; i < _VerticesNumber - 1; ++i)
