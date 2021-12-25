@@ -1,14 +1,19 @@
 # TSP-Taiwan
 ## Introduction
-In this project, I use three algorithms to approximate the Travelling Salesman Problem (TSP) with data from Taiwan.
+In this project, I use several algorithms to approximate the Travelling Salesman Problem (TSP) with data from Taiwan. Since the data are real distances, the TSP problem is considered Metric TSP.
 
 ## Algorithms 
-### Nearest Neighbor
+### Nearest Neighbor (Greedy Algorithm)
 This algorithm always choose the nearest unvisited neighbour as the next destination.  
 
-### Minimum Spanning Tree
+### Minimum Spanning Tree (2-approximation algorithm)
 The algorithm first calculate the Minimum Spanning Tree (MST), and sort the sequence of destinations with preorder traversal.
+
 ### Branch and Bound
+TBD
+
+### Christofides–Serdyukov Algorithm (1.5-approximation algorithm)
+TBD
 
 ## Distances between Cities
 The data between counties are measured with Google Maps, and I use the government building as the exact point to measure the distance between counties.
