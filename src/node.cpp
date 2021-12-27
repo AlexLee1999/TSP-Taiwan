@@ -6,6 +6,7 @@ node::node(int id)
     _id = id;
     _key = INT_MAX;
     _isVisited = false;
+    _isTraversalVisited = false;
     _PreviousNode = nullptr;
 }
 
@@ -22,6 +23,11 @@ float node::GetKey() const
 void node::SetVisited()
 {
     _isVisited = true;
+}
+
+void node::SetTraversalVisited()
+{
+    _isTraversalVisited = true;
 }
 
 void node::AddAdjancentNode(node *AdjNode, float distance)

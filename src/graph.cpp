@@ -188,10 +188,11 @@ void graph::PreorderTraversal()
 
 void graph::Traversal(node *Node)
 {
+    Node->SetTraversalVisited();
     _SequenceList.push_back(Node);
     for (int i = 0; i < Node->_AdjacentNodeList.size(); ++i)
     {
-        if (Node->_AdjacentNodeList[i].second.second == true && Node->_id < Node->_AdjacentNodeList[i].first->_id)
+        if (Node->_AdjacentNodeList[i].second.second == true && !Node->_AdjacentNodeList[i].first->_isTraversalVisited)
         {
             Traversal(Node->_AdjacentNodeList[i].first);
         }

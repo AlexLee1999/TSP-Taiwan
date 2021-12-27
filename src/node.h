@@ -14,6 +14,7 @@ private:
     float _key;
     bool _isVisited;
     node * _PreviousNode;
+    bool _isTraversalVisited;
 
 public:
     node(int);
@@ -22,6 +23,7 @@ public:
     void SetKey(float);    //For Prim's Algorithm
     float  GetKey() const; //For Prim's Algorithm
     void SetVisited();
+    void SetTraversalVisited();
 };
 
 #endif

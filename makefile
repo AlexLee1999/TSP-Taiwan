@@ -1,23 +1,24 @@
-
 CC = g++
-CFLAGS = -c
+FLAGS = -g -c
 
+SOURCEDIR = src
+BUILDDIR = build
 OPTFLAGS = -O3 -std=c++11 -Wall
 
-BIN = Tsp
+EXECUTABLE = TSP
+SOURCES = $(wildcard src/*.cpp)
+OBJECTS = $(patsubst $(SOURCEDIR)/%.cpp,$(BUILDDIR)/%.o,$(SOURCES))
 
-${BIN}		: main.o graph.o node.o 
-			$(CC) $(OPTFLAGS) -o ${BIN} main.o graph.o node.o
+all: dir $(BUILDDIR)/$(EXECUTABLE)
 
-main.o 	   	: src/main.cpp
-			$(CC) $(OPTFLAGS) $(CFLAGS) src/main.cpp
+dir:
+	mkdir -p $(BUILDDIR)
 
-graph.o	    : src/graph.cpp src/graph.h
-			$(CC) $(OPTFLAGS) $(CFLAGS) src/graph.cpp
+$(BUILDDIR)/$(EXECUTABLE): $(OBJECTS)
+	$(CC) $^ -o $@
 
-node.o	    : src/node.cpp src/node.h
-			$(CC) $(OPTFLAGS) $(CFLAGS) src/node.cpp
+$(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.cpp
+	$(CC) $(FLAGS) $< -o $@
 
 clean:
-			rm -rf *.o  ${BIN}
-
+	rm -f $(BUILDDIR)/*o $(BUILDDIR)/$(EXECUTABLE)

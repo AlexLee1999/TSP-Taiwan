@@ -1,5 +1,3 @@
-
-*.o
-Tsp
+/build
 .DS_Store
 .vscode/settings.json

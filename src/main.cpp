@@ -7,11 +7,12 @@
 
 int main(int argc, char *argv[])
 {
-    std::fstream fin("./distance.txt");
+    std::string data = argv[2];
+    std::string inFilePath = "./" + data + "_distance.txt";
     std::string algorithm = argv[1];
+    std::string outFilePath = "./" + algorithm + data +  ".txt";
+    std::fstream fin(inFilePath);
     std::fstream fout;
-    std::string inFilePath = "./distance.txt";
-    std::string outFilePath = "./" + algorithm + ".txt";
     fout.open(outFilePath, std::ios::out | std::ios::trunc);
     int VerticesSize;
     fin >> VerticesSize; // get vertices numbers
