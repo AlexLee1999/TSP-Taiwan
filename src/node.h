@@ -21,7 +21,7 @@ public:
     ~node() {}
     void AddAdjancentNode(node *, float);
     void SetKey(float);    //For Prim's Algorithm
-    float  GetKey() const; //For Prim's Algorithm
+    float GetKey() const; //For Prim's Algorithm
     void SetVisited();
     void SetTraversalVisited();
 };

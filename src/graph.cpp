@@ -236,3 +236,23 @@ void graph::NearestNeighbor()
     }
     _SequenceList.push_back(_NodeList[0]);
 }
+
+void graph::WriteNNOutputStream(std::ostream &fout)
+{
+    fout << "NN" << std::endl;
+    for (int i = 0; i < _SequenceList.size() - 1; ++i)
+    {
+        fout << _SequenceList[i]->_id << " ";
+    }
+    fout << _SequenceList[_SequenceList.size() - 1]->_id << std::endl;
+}
+
+void graph::WriteMSTOutputStream(std::ostream &fout)
+{
+    fout << "MST" << std::endl;
+    for (int i = 0; i < _SequenceList.size() - 1; ++i)
+    {
+        fout << _SequenceList[i]->_id << " ";
+    }
+    fout << _SequenceList[_SequenceList.size() - 1]->_id << std::endl;
+}

@@ -44,5 +44,7 @@ public:
     void PrintSequence(std::ostream&);
     void WriteMSTOutputFile(std::ostream &);
     void WriteNNOutputFile(std::ostream &);
+    void WriteMSTOutputStream(std::ostream &);
+    void WriteNNOutputStream(std::ostream &);
 };
 #endif

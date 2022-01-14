@@ -11,9 +11,12 @@ int main(int argc, char *argv[])
     std::string inFilePath = "./" + data + "_distance.txt";
     std::string algorithm = argv[1];
     std::string outFilePath = "./" + algorithm + data +  ".txt";
+    std::string outStreamPath = "./" + algorithm + data +  "stream.txt";
     std::fstream fin(inFilePath);
     std::fstream fout;
     fout.open(outFilePath, std::ios::out | std::ios::trunc);
+    std::fstream foutStream;
+    foutStream.open(outStreamPath, std::ios::out | std::ios::trunc);
     int VerticesSize;
     fin >> VerticesSize; // get vertices numbers
     graph *myGraph = new graph(VerticesSize);
@@ -31,11 +34,13 @@ int main(int argc, char *argv[])
         myGraph->PreorderTraversal();
         myGraph->CalculateDistance();
         myGraph->WriteMSTOutputFile(fout);
+        myGraph->WriteMSTOutputStream(foutStream);
     }
     else if (algorithm == "NN")
     {
         myGraph->NearestNeighbor();
         myGraph->CalculateDistance();
         myGraph->WriteNNOutputFile(fout);
+        myGraph->WriteNNOutputStream(foutStream);
     }
 }
