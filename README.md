@@ -17,7 +17,7 @@ TBD
 
 
 ## Map
-<img src="Taiwan_map.png" width="300">
+<img src="Taiwan_map.png" width="700">
 
 ## Results - Counties
 ### Nearest Neighbour Algorithm
