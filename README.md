@@ -3,7 +3,7 @@
 In this project, I use several algorithms to approximate the Travelling Salesman Problem (TSP) with data from Taiwan. Since the data are real distances, the TSP problem is considered Metric TSP.
 
 ## Distance
-Haversine formula  
+Haversine formula : Calculate the distance between two positions with longitude and latitude.
 <img src="formula.png" width="700">
 
 ## Algorithms 
