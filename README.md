@@ -16,6 +16,9 @@ TBD
 TBD
 
 
+## Map
+<img src="Taiwan_map.png" width="300">
+
 ## Results - Counties
 ### Nearest Neighbour Algorithm
 #### Google Map Plot

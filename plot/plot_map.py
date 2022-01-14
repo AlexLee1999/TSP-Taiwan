@@ -10,6 +10,7 @@ sns.mpl.rc('figure', figsize=(10, 6))
 
 data_path = '../data'
 shp_path = data_path + '/mapdata202104280245/TOWN_MOI_1100415.shp'
+# shp_path = data_path + '/mapdata202008310842/COUNTY_MOI_1090820.shp'
 sf = shp.Reader(shp_path)
 
 
@@ -29,7 +30,7 @@ def plot_map(sf):
         yy = []
         for p in points:
             if p in visited:
-                plt.plot(xx, yy, "#b0b0b0", linewidth=0.7)
+                plt.plot(xx, yy, "k", linewidth=0.7)
                 xx = []
                 yy = []
             else:
@@ -38,11 +39,9 @@ def plot_map(sf):
                 visited.add(p)
         id += 1
     df = pandas.read_csv(data_path + "/town_data.csv")
-    towns_nums = 371
     df = df.drop(["行政區名", "TGOS_URL"], axis=1)
     df = df.drop(["_x0033_碼郵遞區號"], axis=1)
-    print(df)
-    plt.scatter(df['中心點經度'], df['中心點緯度'], 23, 'red')
+    plt.scatter(df['中心點經度'], df['中心點緯度'], 0.5, "#d0aab5")
     plt.savefig('../Taiwan_map.png')
 
 
