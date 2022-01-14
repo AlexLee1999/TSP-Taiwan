@@ -24,13 +24,17 @@ def plot_map(sf):
         if min(x) < 118:
             print(id, shape)
             continue
+
         points = list(zip(x, y))
         visited = set()
         xx = []
         yy = []
         for p in points:
             if p in visited:
-                plt.plot(xx, yy, "k", linewidth=0.7)
+                if min(xx) > 123:
+                    plt.plot(xx, yy, "white", linewidth=0.7)
+                else:
+                    plt.plot(xx, yy, "k", linewidth=0.7)
                 xx = []
                 yy = []
             else:
