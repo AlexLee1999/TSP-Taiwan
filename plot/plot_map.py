@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+import pandas
 import shapefile as shp
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -8,8 +8,8 @@ import seaborn as sns
 sns.set(style='whitegrid', palette='pastel', color_codes=True)
 sns.mpl.rc('figure', figsize=(10, 6))
 
-
-shp_path = './mapdata202104280245/TOWN_MOI_1100415.shp'
+data_path = '../data'
+shp_path = data_path + '/mapdata202104280245/TOWN_MOI_1100415.shp'
 sf = shp.Reader(shp_path)
 
 
@@ -37,7 +37,13 @@ def plot_map(sf):
                 yy.append(p[1])
                 visited.add(p)
         id += 1
-    plt.show()
+    df = pandas.read_csv(data_path + "/town_data.csv")
+    towns_nums = 371
+    df = df.drop(["行政區名", "TGOS_URL"], axis=1)
+    df = df.drop(["_x0033_碼郵遞區號"], axis=1)
+    print(df)
+    plt.scatter(df['中心點經度'], df['中心點緯度'], 23, 'red')
+    plt.savefig('../Taiwan_map.png')
 
 
 plot_map(sf)
