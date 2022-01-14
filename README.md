@@ -3,7 +3,8 @@
 In this project, I use several algorithms to approximate the Travelling Salesman Problem (TSP) with data from Taiwan. Since the data are real distances, the TSP problem is considered Metric TSP.
 
 ## Distance
-- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
+Haversine formula  
+<img src="formula.png" width="700">
 
 ## Algorithms 
 ### Nearest Neighbor (Greedy Algorithm)
@@ -62,3 +63,4 @@ Total Distance : 3907.32 km
 Data : https://data.gov.tw/dataset/25489  
 Map data : https://data.gov.tw/dataset/7441  
 shp Plot Reference : https://github.com/Wesely/Taiwan-Python-Map  
+Haversine formula : https://en.wikipedia.org/wiki/Haversine_formula
